@@ -16,7 +16,8 @@ class Program
         Console.WriteLine("2. Display entries");
         Console.WriteLine("3. Save the journal");
         Console.WriteLine("4. Load a saved journal");
-        Console.WriteLine("5. Quit");
+        Console.WriteLine("5. Submit your own prompt");
+        Console.WriteLine("6. Quit");
         Console.Write(">");
     }
     static void Main(string[] args)
@@ -24,8 +25,7 @@ class Program
         //variables to be used
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
-        //Random rand = new Random();
-        //int randomPrompt = rand.Next(0, 4);
+        int randomMax = 5;
         List<string> prompts = new List<string>();
         prompts.Add("How did you see the hand of God in your life today?");
         prompts.Add("What is something that you are greatful for today?");
@@ -52,12 +52,12 @@ class Program
         menu();
         string userSelection = Console.ReadLine();
 
-        while (userSelection != "5")
+        while (userSelection != "6")
         {
             if (userSelection == "1")
             {
                 Random rand = new Random();
-                int randomPrompt = rand.Next(0, 4);
+                int randomPrompt = rand.Next(0, randomMax);
                 Console.WriteLine();
                 Console.WriteLine(prompts[randomPrompt]);
                 Console.Write(">");
@@ -95,9 +95,20 @@ class Program
                 menu();
                 userSelection = Console.ReadLine();
             }
+
+            if (userSelection == "5")
+            {
+                Console.WriteLine("What is your new prompt?");
+                string newPrompt = Console.ReadLine();
+                prompts.Add(newPrompt);
+                randomMax++;
+
+                menu();
+                userSelection = Console.ReadLine();
+            }
             
         }
-        if (userSelection == "5")
+        if (userSelection == "6")
         {
             Console.WriteLine("Shutting down...");
         }
