@@ -46,6 +46,8 @@ class Program
             }
             Console.WriteLine(newVerse);
             Console.ReadLine();
+            scripture.scriptures.Clear();
+            scripture.scriptures.Add(newVerse);
             if (userInput == "quit")
             {
                 Console.WriteLine("Good job memorizing the scripture!");

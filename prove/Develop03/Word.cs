@@ -21,6 +21,7 @@ public class Words
             letter = '_';
             blankWord += "_";
         }
+        blankWord = " " + blankWord;
         return blankWord;
     }
 }
