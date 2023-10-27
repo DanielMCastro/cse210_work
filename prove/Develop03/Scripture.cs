@@ -3,5 +3,5 @@ using System;
 public class Scripture
 {
 
-    public List<String> scriptures {get; set;}
+    public List<string> scriptures {get; set;}
 }

@@ -3,15 +3,11 @@ using System.ComponentModel;
 
 public class Reference
 {
-    public string book {get; set;}
-    public int chapter {get; set;}
-    public int verse {get; set;}
-    public int endVerse {get; set;}
+    private string book;
+    private int chapter;
+    public int verse;
+    public int endVerse;
 
-    /*public void Reference1(int oneVerse)
-    {
-        Console.Write($"{book} {chapter}:{oneVerse}");
-    }*/
     public string Reference1(int oneVerse, int lastVerse)
     {
         string reference = $"{book} {chapter}:{oneVerse}-{lastVerse}";
@@ -20,10 +16,10 @@ public class Reference
 
     public void ReferenceSet(string userBook, int userChapter, int userVerse, int userEndVerse)
     {
-        userBook = book;
-        userChapter = chapter;
-        userVerse = verse;
-        userEndVerse = endVerse;
+        book = userBook;
+        chapter = userChapter;
+        verse = userVerse;
+        endVerse = userEndVerse;
     }
 
     public string ReferenceGet()
