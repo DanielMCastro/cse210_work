@@ -4,49 +4,62 @@ public class Activity
     private string activity;
     private string description;
 
-    public string StartMessage()
+    public Activity(int activityDuration, string activityActivity, string activityDescription)
     {
-        return($"This is the {activity} activity. It's purpose is to {description}. How long would you like this activity to last?");
+        duration = activityDuration;
+        activity = activityActivity;
+        description = activityDescription;
+    }
+    public Activity()
+    {
+
     }
 
-    public string endMessage() //fix this! it needs to be void, and just print stuff out.
+    public string StartMessage()
     {
-        return($"Good job on the mindfulness exercise!You have just completed the {activity} activity, and did it for {duration} seconds.");
+        return $"This is the {activity} activity. It's purpose is to {description}. How long would you like this activity to last?";
+    }
+
+    public void EndMessage()
+    {
+        Console.WriteLine($"Good job on the mindfulness exercise!You have just completed the {activity} activity, and did it for {duration} seconds.");
     }
     
-    public void DisplayAnimation()
+    public void DisplayAnimation(int seconds)
     {
-        
-        Console.Write("_");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write(".");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("o");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("O");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("*");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("*");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("O");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("o");
-        Thread.Sleep(250);  
-        Console.Write("\b \b");
-        Console.Write(".");
-        Thread.Sleep(250);
-        Console.Write("\b \b");
-        Console.Write("_");
-        Thread.Sleep(250);
-        Console.Write("\b \b");  
+        for (int s = 0; s < seconds; s++)
+        {
+            Console.Write("_");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write(".");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("o");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("O");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("*");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("*");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("O");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("o");
+            Thread.Sleep(250);  
+            Console.Write("\b \b");
+            Console.Write(".");
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            Console.Write("_");
+            Thread.Sleep(250);
+            Console.Write("\b \b"); 
+        }
     }
 
     public void PauseTimer(int seconds)
