@@ -22,7 +22,9 @@ public class Activity
 
     public void EndMessage()
     {
-        Console.WriteLine($"Good job on the mindfulness exercise!You have just completed the {activity} activity, and did it for {duration} seconds.");
+        Console.WriteLine($"Good job on the mindfulness exercise!");
+        DisplayAnimation(4);
+        Console.WriteLine($"You have just completed the {activity} activity, and did it for {duration} seconds.");
     }
     
     public void DisplayAnimation(int seconds)
@@ -30,34 +32,34 @@ public class Activity
         for (int s = 0; s < seconds; s++)
         {
             Console.Write("_");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write(".");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("o");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("O");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("*");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("*");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("O");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("o");
-            Thread.Sleep(250);  
+            Thread.Sleep(100);  
             Console.Write("\b \b");
             Console.Write(".");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
             Console.Write("_");
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b"); 
         }
     }
